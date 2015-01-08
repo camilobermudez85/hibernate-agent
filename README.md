@@ -1,6 +1,7 @@
 # hibernate-instrumentator
-Jboss service that allows to expose the hibernate statistics mBean through the underlying JBoss JMX infrastructure.
+Jboss service that manages the publication of hibernate3 statistics mBeans through the underlying JBoss JMX infrastructure.
 
+##Usage
 The service will be exposed in JMX with the name,
 ```
 com.hibernateinstrumentator:service=Instrumentator
@@ -17,7 +18,7 @@ after instrumenting a session factory, an MBean will be created with the name,
 hibernate.statistics:type={name}
 ```
 
-where `name` is the JNDI name of the session factory with the `:` and `/` characters replaced by the dot(`.`) character.  
+where `name` is the JNDI name of the session factory with the ':' and '/' characters replaced by the dot ('.') character.  
 
 So far the project has been tested only on JBoss 4.2.3.
 
@@ -32,13 +33,17 @@ The project can be built using either maven or gradle.
 ```
 ... hibernate-instrumentator]$ gradle sar
 ```
-in the build/libs/ directory you'll find the *.sar file.
+in the build/libs/ directory you'll find the .sar file.
 
 ###Maven
 - Run,
 ```
-... hibernate-instrumentator]$ maven jar
+... hibernate-instrumentator]$ mvn jar
 ```
-in the target/ directory you'll find a *.jar file, change its extension to .sar and that is it.
+in the target/ directory you'll find a .jar file
+
+##Deployment
+
+- If you used maven to build the project, change the generated .jar extension to .sar.
 
 - Deploy the .sar file to JBoss
