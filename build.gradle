@@ -1,0 +1,31 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "application"
+
+group="com.hibernateinstrumentator"
+version="0.9.0"
+sourceCompatibility=1.6
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile "jboss:jboss-system:4.2.2.GA"
+	compile "jboss:jboss-jmx:4.2.2.GA"
+	compile "org.jboss.logging:jboss-logging:3.0.0.GA"
+	compile "hibernate:hibernate:3.0.5"
+	compile "javax.transaction:jta:1.1"
+	testCompile "junit:junit:4.8.1"
+	testCompile "com.jayway.restassured:rest-assured:2.3.2"
+}
+
+compileJava {
+	options.fork = true
+	options.incremental = true
+}
+
+task sar(type: Jar) {
+  from sourceSets.main.output
+  archiveName = project.name + "-" + project.version + ".sar"
+}

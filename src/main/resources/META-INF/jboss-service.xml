@@ -1,0 +1,8 @@
+<mbean code="com.hibernateinstrumentator.jboss.Instrumentator"
+	name="com.hibernateinstrumentator:service=Instrumentator">
+
+	<depends>
+		jboss.system:service=MainDeployer
+	</depends>
+
+</mbean>
