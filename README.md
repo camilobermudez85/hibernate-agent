@@ -43,7 +43,6 @@ in the build/libs/ directory you'll find the .sar file.
 in the target/ directory you'll find a .jar file
 
 ##Deployment
-
+- Get the .sar binary either by building the project or downloading it directly from one of the releases.
 - If you used maven to build the project, change the generated .jar extension to .sar.
-
-- Deploy the .sar file to JBoss
+- Deploy the .sar file to JBoss.
