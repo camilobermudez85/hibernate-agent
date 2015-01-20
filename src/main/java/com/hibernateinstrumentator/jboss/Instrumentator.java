@@ -34,7 +34,6 @@ import javax.naming.NamingException;
 import javax.naming.Reference;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.jmx.StatisticsService;
 import org.jboss.system.ServiceMBeanSupport;
 
 /**
